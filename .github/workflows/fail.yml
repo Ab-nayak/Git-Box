@@ -1,0 +1,23 @@
+name: Node CI/CD - Fail Demo
+
+on:
+  workflow_dispatch:  # Manual trigger to show failure on demand
+
+jobs:
+  test-app:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests (Intentional fail)
+      run: node test.js
