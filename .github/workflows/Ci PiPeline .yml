@@ -2,7 +2,7 @@ name: Node CI/CD - Pass Demo
 
 on:
   push:
-    branches: [Learn-CI]
+    branches: [learning-ci]
 
 jobs:
   test-app:
